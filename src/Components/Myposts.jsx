@@ -68,24 +68,40 @@ const Myposts = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-5">
-                <h2 className="text-2xl font-bold mb-2 text-gray-800">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600">
-                  <strong>Location:</strong> {post.location}
-                </p>
-                <p className="text-gray-600">
-                  <strong>Rent:</strong> ${post.rent}
-                </p>
-                <p className="text-gray-600">
-                  <strong>Room Type:</strong> {post.type}
-                </p>
-                <p className="text-gray-600">
-                  <strong>Availability:</strong> {post.availability}
-                </p>
-                <p className="text-gray-600 mt-2">
-                  <strong>Contact:</strong> {post.contact}
-                </p>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h2 className="text-2xl font-bold mb-2 text-gray-800">
+                      {post.title}
+                    </h2>
+                    <p className="text-gray-600">
+                      <strong>Location:</strong> {post.location}
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>Rent:</strong> ${post.rent}
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>Room Type:</strong> {post.type}
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>Availability:</strong> {post.availability}
+                    </p>
+                    <p className="text-gray-600 mt-2">
+                      <strong>Contact:</strong> {post.contact}
+                    </p>
+                  </div>
+
+                  {/* User Avatar and Name */}
+                  <div className="flex flex-col items-center ml-4">
+                    <div className="avatar avatar-online">
+                      <div className="w-24 rounded-full">
+                        <img src={user?.photoURL} alt="User avatar" />
+                      </div>
+                    </div>
+                    <p className="mt-2 text-gray-700 font-bold">
+                      {user?.displayName}
+                    </p>
+                  </div>
+                </div>
 
                 {/* Buttons */}
                 <div className="mt-4 flex justify-between">
