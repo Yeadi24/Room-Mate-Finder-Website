@@ -1,70 +1,32 @@
 import React from "react";
 import { Link } from "react-router";
-import Swal from "sweetalert2";
 
-const Card = ({ post, posts, setPosts }) => {
-  //delete coffe
-  const handleDelete = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      console.log(result.isConfirmed);
-
-      if (result.isConfirmed) {
-        fetch(`http://localhost:3000/coffees/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-              });
-              console.log(posts, id);
-
-              const remaining = posts.filter((item) => item._id !== id);
-              setPosts(remaining);
-            }
-          });
-      }
-    });
-  };
+const Card = ({ post }) => {
   return (
-    <div>
-      <div className="card card-side bg-base-100 shadow-sm border-2">
-        <figure>
-          <img src={post.url} alt="Movie" className="w-[200px] h-[300px]" />
-        </figure>
-        <div className="flex flex-col justify-center items-center gap-4">
-          <h2 className="font-bold text-xl">Name: {post.coffe}</h2>
-          <p className="font-semibold">Category:{post.category}</p>
-          <p className="font-semibold">Price: {post.price}</p>
-          <p className="font-semibold">Quantity: {post.quantity}</p>
-        </div>
-        <div className="flex flex-col justify-center items-center gap-3 ml-4">
-          <Link to={`/postDetails/${post._id}`}>
-            <button className="btn btn-dash btn-success">View</button>
-          </Link>
-          <Link to={`/updatePost/${post._id}`}>
-            <button className="btn btn-dash btn-success">Edit</button>
-          </Link>
-
-          <button
-            onClick={() => {
-              handleDelete(post._id);
-            }}
-            className="btn btn-dash btn-error"
+    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+      <img
+        src={post.url}
+        alt={post.title}
+        className="w-full h-52 object-cover"
+      />
+      <div className="p-6 space-y-3">
+        <h2 className="text-3xl font-extrabold text-pink-600">{post.title}</h2>
+        <p className="text-lg text-gray-700">
+          <strong className="text-indigo-600">Location:</strong> {post.location}
+        </p>
+        <p className="text-lg text-gray-700">
+          <strong className="text-green-600">Rent:</strong> ${post.rent}
+        </p>
+        <p className="text-lg text-gray-700">
+          <strong className="text-blue-600">Type:</strong> {post.type}
+        </p>
+        <div className="pt-4">
+          <Link
+            to={`/posts/${post._id}`}
+            className="inline-block px-5 py-2 text-lg bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg shadow-md hover:from-pink-600 hover:to-red-600 transition-all"
           >
-            Delete
-          </button>
+            See More
+          </Link>
         </div>
       </div>
     </div>

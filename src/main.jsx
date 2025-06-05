@@ -12,6 +12,7 @@ import Register from "./Components/Register.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AuthProvider from "./Contexts/AuthProvider.jsx";
 import Myposts from "./Components/Myposts.jsx";
+import AllPosts from "./Components/AllPosts.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,6 +59,18 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UpdatePost></UpdatePost>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/allposts",
+        loader: () => {
+          const data = fetch(`http://localhost:3000/posts`);
+          return data;
+        },
+        element: (
+          <PrivateRoute>
+            <AllPosts></AllPosts>
           </PrivateRoute>
         ),
       },
