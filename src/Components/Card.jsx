@@ -22,7 +22,7 @@ const Card = ({ post }) => {
         </p>
         <div className="pt-4">
           <Link
-            to={`/posts/${post._id}`}
+            to={`/postDetails/${post._id}`}
             className="inline-block px-5 py-2 text-lg bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg shadow-md hover:from-pink-600 hover:to-red-600 transition-all"
           >
             See More
