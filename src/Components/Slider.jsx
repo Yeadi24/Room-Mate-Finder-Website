@@ -43,7 +43,6 @@ const Slider = () => {
   };
 
   const handleImageLoad = (index) => {
-    console.log(`Image ${index + 1} loaded successfully`);
     setImageLoaded((prev) => {
       const newState = [...prev];
       newState[index] = true;

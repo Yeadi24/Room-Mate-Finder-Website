@@ -4,6 +4,7 @@ import { AuthContext } from "../Contexts/AuthContext";
 
 const Card = ({ post }) => {
   const { user } = useContext(AuthContext);
+  console.log(post, "ok");
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
@@ -41,11 +42,11 @@ const Card = ({ post }) => {
         <div className="flex flex-col items-center ml-6">
           <div className="avatar avatar-online">
             <div className="w-20 rounded-full">
-              <img src={user?.photoURL} alt="User Avatar" />
+              <img src={post?.avatar} alt="User Avatar" />
             </div>
           </div>
           <p className="mt-2 text-gray-700 font-medium text-center">
-            {user?.displayName}
+            {post?.name}
           </p>
         </div>
       </div>
