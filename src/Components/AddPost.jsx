@@ -16,6 +16,7 @@ const AddCoffe = () => {
     const formData = new FormData(form);
     const postData = Object.fromEntries(formData.entries());
     postData.avatar = user.photoURL;
+    postData.like = 0;
     console.log(postData);
     fetch("http://localhost:3000/posts", {
       method: "POST",

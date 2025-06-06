@@ -1,15 +1,39 @@
 import React, { useState, useContext } from "react";
 import { useLoaderData } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const PostDetails = () => {
   const post = useLoaderData();
   const { user } = useContext(AuthContext);
-  const [likeCount, setLikeCount] = useState(0);
+  const [likeCount, setLikeCount] = useState(post.like || 0);
 
   const handleLike = () => {
     if (user && user.email !== post.email) {
-      setLikeCount(likeCount + 1);
+      const newLikeCount = likeCount + 1;
+      setLikeCount(newLikeCount);
+
+      // Update like count in MongoDB
+      fetch(`http://localhost:3000/posts/${post._id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ like: newLikeCount }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Like Added !!!",
+              showConfirmButton: false,
+              timer: 800,
+            });
+          }
+        })
+        .catch((error) => console.error("Error updating like count:", error));
     }
   };
 
@@ -17,7 +41,7 @@ const PostDetails = () => {
     <div className="p-8 md:p-16 bg-gradient-to-br from-pink-50 to-white min-h-screen animate-fade-in">
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-pink-300">
         <div className="p-8">
-          <p className="text-xl text-pink-600 font-semibold">
+          <p className="text-xl text-gray-700 font-semibold">
             {likeCount} people interested in
           </p>
         </div>
