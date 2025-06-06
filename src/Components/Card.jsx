@@ -7,7 +7,7 @@ const Card = ({ post }) => {
   console.log(post.avatar, "ok");
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+    <div className="bg-white h-[450px] rounded-xl shadow-lg border border-gray-200 overflow-hidden transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
       <img
         src={post.url}
         alt={post.title}

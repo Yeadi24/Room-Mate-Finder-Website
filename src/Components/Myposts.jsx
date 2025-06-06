@@ -65,6 +65,8 @@ const Myposts = () => {
                   <th>Photo</th>
                   <th>Name</th>
                   <th>Rent</th>
+                  <th>Location</th>
+                  <th>Type</th>
                   <th>Update</th>
                   <th>Delete</th>
                 </tr>
@@ -82,6 +84,8 @@ const Myposts = () => {
                     </td>
                     <td>{post.name}</td>
                     <td>${post.rent}</td>
+                    <td>{post.location}</td>
+                    <td>{post.type}</td>
                     <td>
                       <button
                         onClick={() => navigate(`/updatePost/${post._id}`)}
