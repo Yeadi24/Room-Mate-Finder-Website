@@ -11,13 +11,18 @@ const Home = () => {
   const initialPosts = useLoaderData();
   const [posts, setPosts] = useState(initialPosts);
 
+  // Filter posts to show only 6 available ones
+  const availablePosts = posts
+    .filter((post) => post.availability === "available")
+    .slice(0, 6);
+
   return (
     <>
       <Banner></Banner>
       <Slider></Slider>
-      <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-12">
-          {posts.map((post) => (
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mx-auto max-w-7xl py-12">
+          {availablePosts.map((post) => (
             <Card
               key={post._id}
               setCoffees={setPosts}

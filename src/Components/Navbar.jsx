@@ -104,7 +104,7 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <span className="text-blue-600 mx-6 text-[26px] font-bold">
+              <span className="text-blue-600 mx-6 text-[20px] font-bold">
                 {user.displayName}
               </span>
               <button className="btn btn-primary text-white mr-4">

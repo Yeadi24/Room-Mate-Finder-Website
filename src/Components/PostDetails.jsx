@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { useLoaderData } from "react-router";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const PostDetails = () => {
   const post = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const [likeCount, setLikeCount] = useState(0);
+
+  const handleLike = () => {
+    if (user && user.email !== post.email) {
+      setLikeCount(likeCount + 1);
+    }
+  };
 
   return (
     <div className="p-8 md:p-16 bg-gradient-to-br from-pink-50 to-white min-h-screen animate-fade-in">
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-pink-300">
+        <div className="p-8">
+          <p className="text-xl text-pink-600 font-semibold">
+            {likeCount} people interested in
+          </p>
+        </div>
         <img
           src={post.url}
           alt={post.title}
@@ -46,10 +60,23 @@ const PostDetails = () => {
             <span className="font-semibold text-gray-600">Description:</span>{" "}
             {post.description}
           </p>
-          <p className="text-lg text-gray-700">
-            <span className="font-semibold text-red-500">Contact Info:</span>{" "}
-            {post.contact}
-          </p>
+          {likeCount > 0 && (
+            <p className="text-lg text-gray-700">
+              <span className="font-semibold text-red-500">Contact Info:</span>{" "}
+              {post.contact}
+            </p>
+          )}
+          <button
+            onClick={handleLike}
+            disabled={user && user.email === post.email}
+            className={`mt-4 inline-block px-6 py-2 text-lg font-semibold rounded-lg shadow-md text-white transition-all ${
+              user && user.email === post.email
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-500 hover:bg-blue-600"
+            }`}
+          >
+            Like
+          </button>
         </div>
       </div>
     </div>
