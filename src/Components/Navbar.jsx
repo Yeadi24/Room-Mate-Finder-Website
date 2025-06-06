@@ -1,11 +1,13 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import useTheme from "../Hooks/useTheme";
 import "./Navbar.css";
 import { AuthContext } from "../Contexts/AuthContext";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
+  const { theme, toggleTheme } = useTheme();
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
@@ -80,6 +82,15 @@ const Navbar = () => {
               alt="logo"
             />
             <a className="btn btn-ghost text-2xl">RoomMate Finder</a>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              value="dark"
+              className="toggle theme-controller mr-6 text-pink"
+              checked={theme === "dark"}
+              onChange={(e) => toggleTheme(e.target.checked)}
+            />
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
