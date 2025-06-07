@@ -6,6 +6,7 @@ import "./styles.css";
 import Banner from "./Banner";
 import Slider from "./Slider";
 import Extra from "./Extra";
+import Features from "./Features";
 
 const Home = () => {
   document.title = "RoomMate Finder";
@@ -18,7 +19,7 @@ const Home = () => {
     .slice(0, 6);
 
   return (
-    <>
+    <div>
       <Banner></Banner>
       <Slider></Slider>
       <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -34,7 +35,8 @@ const Home = () => {
         </div>
       </div>
       <Extra></Extra>
-    </>
+      <Features></Features>
+    </div>
   );
 };
 

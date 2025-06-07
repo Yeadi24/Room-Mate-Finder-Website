@@ -1,9 +1,13 @@
 import React from "react";
+import { useDarkMode } from "../Contexts/ThemeContext";
 
 const DarkModeToggler = () => {
-  const darkMode = false;
+  const { darkMode, setDarkMode } = useDarkMode();
+
+  const toggleTheme = () => setDarkMode(!darkMode);
+
   return (
-    <button className="btn btn-dash btn-accent">
+    <button onClick={toggleTheme} className="btn btn-dash btn-accent">
       {darkMode ? "Light ☀️" : "Dark 🌙"}
     </button>
   );
