@@ -48,8 +48,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" dark:bg-gray-600 dark:text-white">
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className="bg-white text-black dark:bg-gray-300 dark:text-white">
+      <div className="navbar  shadow-sm">
         <div className="navbar-start ml-6">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

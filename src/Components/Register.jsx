@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { toast } from "react-toastify";
 import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Register = () => {
   document.title = "Register";
@@ -11,7 +12,11 @@ const Register = () => {
   const handleGoogleSignIn = () => {
     GoogleSignIn()
       .then(() => {
-        toast.success("Google Sign-In Successful!");
+        Swal.fire({
+          title: "SignIn Successful !!!",
+          icon: "success",
+          draggable: true,
+        });
         navigate("/");
       })
       .catch(() => {});
@@ -29,11 +34,19 @@ const Register = () => {
         console.log("created");
         update(name, photo)
           .then(() => {
-            toast("You have registered successfully  !!!");
+            Swal.fire({
+              title: "Signup Successful !!!",
+              icon: "success",
+              draggable: true,
+            });
             navigate("/");
           })
           .catch(() => {
-            toast("Something went wrong !!!");
+            Swal.fire({
+              title: "Ooopss Signup Unsuccessful !!!",
+              icon: "success",
+              draggable: true,
+            });
           });
       })
       .catch(() => {

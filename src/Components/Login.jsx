@@ -5,6 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { GoogleAuthProvider, sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../public/firebase.init";
+import Swal from "sweetalert2";
 
 const Login = () => {
   document.title = "LogIn";
@@ -27,11 +28,19 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     GoogleSignIn()
       .then(() => {
-        toast.success("Google Sign-In Successful!");
+        Swal.fire({
+          title: "SignIn Successful !!!",
+          icon: "success",
+          draggable: true,
+        });
         navigate("/");
       })
       .catch(() => {
-        toast.error(error);
+        Swal.fire({
+          title: "SignIn Unsuccessful !!!",
+          icon: "success",
+          draggable: true,
+        });
       });
   };
   const handleLogIn = (e) => {
@@ -82,7 +91,7 @@ const Login = () => {
           <div className="card bg-base-300 p-8 mx-auto m-10 max-w-sm shrink-0 mt-14 mb-12 shadow-2xl">
             <h1 className="text-2xl font-bold mx-auto">Login now!</h1>
             <div className="card-body">
-              <form onSubmit={handleLogIn} >
+              <form onSubmit={handleLogIn}>
                 <label className="label">Email</label>
                 <input
                   type="email"
