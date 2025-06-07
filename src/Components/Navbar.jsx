@@ -30,6 +30,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
+      <li>
+        <NavLink to="/allposts">All Posts</NavLink>
+      </li>
 
       {user && (
         <>
@@ -39,9 +42,6 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to="/addPost">Add Post</NavLink>
-          </li>
-          <li>
-            <NavLink to="/allposts">All Posts</NavLink>
           </li>
         </>
       )}

@@ -68,11 +68,7 @@ const router = createBrowserRouter([
           const data = fetch(`http://localhost:3000/posts`);
           return data;
         },
-        element: (
-          <PrivateRoute>
-            <AllPosts></AllPosts>
-          </PrivateRoute>
-        ),
+        element: <AllPosts></AllPosts>,
       },
       {
         path: "/postDetails/:id",
