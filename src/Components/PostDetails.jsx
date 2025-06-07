@@ -13,7 +13,6 @@ const PostDetails = () => {
       const newLikeCount = likeCount + 1;
       setLikeCount(newLikeCount);
 
-      // Update like count in MongoDB
       fetch(`http://localhost:3000/posts/${post._id}`, {
         method: "PUT",
         headers: {
@@ -34,7 +33,7 @@ const PostDetails = () => {
           }
         })
         .catch((error) => console.error("Error updating like count:", error));
-    }
+    } 
   };
 
   return (
