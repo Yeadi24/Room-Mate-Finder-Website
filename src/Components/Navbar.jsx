@@ -4,6 +4,7 @@ import useTheme from "../Hooks/useTheme";
 import "./Navbar.css";
 import { AuthContext } from "../Contexts/AuthContext";
 import { toast } from "react-toastify";
+import DarkModeToggler from "./DarkModeToggler";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -84,13 +85,7 @@ const Navbar = () => {
             <a className="btn btn-ghost text-2xl">RoomMate Finder</a>
           </div>
           <div>
-            <input
-              type="checkbox"
-              value="dark"
-              className="toggle theme-controller mr-6 text-pink"
-              checked={theme === "dark"}
-              onChange={(e) => toggleTheme(e.target.checked)}
-            />
+            <DarkModeToggler></DarkModeToggler>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

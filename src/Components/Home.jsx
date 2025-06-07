@@ -5,6 +5,7 @@ import Card from "./Card";
 import "./styles.css";
 import Banner from "./Banner";
 import Slider from "./Slider";
+import Extra from "./Extra";
 
 const Home = () => {
   document.title = "RoomMate Finder";
@@ -32,6 +33,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Extra></Extra>
     </>
   );
 };
