@@ -70,12 +70,19 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result);
-        toast.success("You have successfully logged in");
+        Swal.fire({
+          title: "SignIn Successful !!!",
+          icon: "success",
+          draggable: true,
+        });
         navigate("/");
       })
-      .catch((error) => {
-        toast.error("Login failed! ");
-        console.log(error);
+      .catch(() => {
+        Swal.fire({
+          title: "SignIn Unsuccessful !!!",
+          icon: "success",
+          draggable: true,
+        });
       });
   };
   return (
