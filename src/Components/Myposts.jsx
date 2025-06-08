@@ -13,7 +13,7 @@ const Myposts = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myposts?email=${user.email}`)
+      fetch(`https://coffe-server-bay.vercel.app/myposts?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setPosts(data);
@@ -32,7 +32,7 @@ const Myposts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/posts/${id}`, {
+        fetch(`https://coffe-server-bay.vercel.app/posts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

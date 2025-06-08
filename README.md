@@ -1,12 +1,38 @@
-# React + Vite
+# 🏠 Room Mate Finder Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Room Mate Finder Website** — a modern, user-friendly platform designed to help individuals find roommates and available rental spaces with ease and efficiency.
 
-Currently, two official plugins are available:
+## 🌐 Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [Visit Live Site](https://your-live-site-url.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Technologies Used
+
+This project utilizes a modern front-end stack with the following tools and libraries:
+
+- **HTML, CSS, JavaScript**
+- **React.js** – Component-based UI library
+- **React Router** – For dynamic page navigation
+- **SweetAlert2** – Beautiful pop-up alerts for actions like delete/update
+- **React Simple Typewriter** – Typewriter animation for engaging headers
+- **React Awesome Reveal** – Animations and transitions for UI elements
+
+---
+
+## 💡 Key Features
+
+- 🔍 **Browse Listings**: Users can view detailed listings of rooms available for rent along with images, prices, locations, and room types.
+
+- 👥 **User-Specific Posts**: Logged-in users can create, update, and delete their own room listings.
+
+- 📸 **User Profile Integration**: Each post displays the user’s avatar and name for credibility and personalization.
+
+- 🔔 **Interactive Alerts**: SweetAlert2 is used for confirming user actions like deletions and providing feedback on operations.
+
+- 🎉 **Smooth Animations**: Leveraging React Awesome Reveal and Typewriter effects for a polished, interactive user experience.
+
+---
+
+## 📁 Folder Structure Overview

@@ -69,7 +69,7 @@ const Home = () => {
         <Banner />
         <Slider />
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <h1 className="text-center text-[55px] font-bold">
+          <h1 className="text-center text-[55px] dark:text-white font-bold">
             Best Available Rooms
           </h1>
           <Bounce triggerOnce duration={1500} delay={800}>

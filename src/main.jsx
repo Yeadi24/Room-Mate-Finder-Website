@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         index: true,
         loader: () => {
-          const data = fetch("http://localhost:3000/posts");
+          const data = fetch("https://coffe-server-bay.vercel.app/posts");
           return data;
         },
         Component: Home,
@@ -56,7 +56,9 @@ const router = createBrowserRouter([
       {
         path: "/updatePost/:id",
         loader: ({ params }) => {
-          const data = fetch(`http://localhost:3000/posts/${params.id}`);
+          const data = fetch(
+            `https://coffe-server-bay.vercel.app/posts/${params.id}`
+          );
           return data;
         },
         element: (
@@ -68,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: "/allposts",
         loader: () => {
-          const data = fetch(`http://localhost:3000/posts`);
+          const data = fetch(`https://coffe-server-bay.vercel.app/posts`);
           return data;
         },
         element: <AllPosts></AllPosts>,
@@ -77,7 +79,9 @@ const router = createBrowserRouter([
       {
         path: "/postDetails/:id",
         loader: ({ params }) => {
-          const data = fetch(`http://localhost:3000/posts/${params.id}`);
+          const data = fetch(
+            `https://coffe-server-bay.vercel.app/posts/${params.id}`
+          );
           return data;
         },
         element: (

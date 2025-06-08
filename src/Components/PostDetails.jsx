@@ -14,7 +14,7 @@ const PostDetails = () => {
       const newLikeCount = likeCount + 1;
       setLikeCount(newLikeCount);
 
-      fetch(`http://localhost:3000/posts/${post._id}`, {
+      fetch(`https://coffe-server-bay.vercel.app/posts/${post._id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

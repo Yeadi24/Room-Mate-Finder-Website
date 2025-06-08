@@ -13,7 +13,7 @@ const UpdatePost = () => {
   const [postData, setPostData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/posts/${id}`)
+    fetch(`https://coffe-server-bay.vercel.app/posts/${id}`)
       .then((res) => res.json())
       .then((data) => setPostData(data));
   }, [id]);
@@ -24,7 +24,7 @@ const UpdatePost = () => {
     const formData = new FormData(form);
     const updatedData = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`https://coffe-server-bay.vercel.app/posts/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

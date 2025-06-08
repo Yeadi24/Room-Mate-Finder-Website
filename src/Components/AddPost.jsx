@@ -19,7 +19,7 @@ const AddCoffe = () => {
     postData.avatar = user.photoURL;
     postData.like = 0;
     console.log(postData);
-    fetch("http://localhost:3000/posts", {
+    fetch("https://coffe-server-bay.vercel.app/posts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
