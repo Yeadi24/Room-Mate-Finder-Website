@@ -12,6 +12,7 @@ import {
   useEffect,
   useState as useStateTheme,
 } from "react";
+import { Bounce } from "react-awesome-reveal";
 
 const ThemeContext = createContext("light");
 
@@ -68,16 +69,21 @@ const Home = () => {
         <Banner />
         <Slider />
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mx-auto max-w-7xl py-12">
-            {availablePosts.map((post) => (
-              <Card
-                key={post._id}
-                setCoffees={setPosts}
-                posts={posts}
-                post={post}
-              />
-            ))}
-          </div>
+          <h1 className="text-center text-[55px] font-bold">
+            Best Available Rooms
+          </h1>
+          <Bounce triggerOnce duration={1500} delay={800}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mx-auto max-w-7xl py-12">
+              {availablePosts.map((post) => (
+                <Card
+                  key={post._id}
+                  setCoffees={setPosts}
+                  posts={posts}
+                  post={post}
+                />
+              ))}
+            </div>
+          </Bounce>
         </div>
         <Extra />
         <Features />
