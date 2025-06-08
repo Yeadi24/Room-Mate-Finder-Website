@@ -7,7 +7,10 @@ const DarkModeToggler = () => {
   const toggleTheme = () => setDarkMode(!darkMode);
 
   return (
-    <button onClick={toggleTheme} className="btn btn-dash btn-accent">
+    <button
+      onClick={toggleTheme}
+      className="btn btn-dash btn-accent bg:gray-200 dark:bg-white/10 cursor-pointer"
+    >
       {darkMode ? "Light ☀️" : "Dark 🌙"}
     </button>
   );

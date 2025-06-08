@@ -2,7 +2,7 @@ import React from "react";
 
 const Extra = () => {
   return (
-    <div>
+    <div className="m-10">
       <div className="hero bg-base-100 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse bg-base-300 rounded-3xl p-10">
           <img

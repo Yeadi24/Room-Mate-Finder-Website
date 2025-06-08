@@ -37,9 +37,9 @@ const Login = () => {
       })
       .catch(() => {
         Swal.fire({
-          title: "SignIn Unsuccessful !!!",
-          icon: "success",
-          draggable: true,
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
         });
       });
   };
@@ -54,19 +54,30 @@ const Login = () => {
     const isLongEnough = password.length >= 6;
 
     if (!hasUpperCase) {
-      toast.warning("Password must contain at least one uppercase letter");
+      Swal.fire({
+        icon: "error",
+        title: "Oops....",
+        text: "Must have uppercase letter!!!",
+      });
       return;
     }
     if (!hasLowerCase) {
-      toast.warning("Password must contain at least one lowercase letter");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Must have lower case leter!!!",
+      });
       return;
     }
     if (!isLongEnough) {
-      toast.warning("Password must be at least 6 characters long");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Must have at least 6 characters!!!",
+      });
       return;
     }
 
-    console.log(email, password);
     signInUser(email, password)
       .then((result) => {
         console.log(result);
@@ -79,9 +90,9 @@ const Login = () => {
       })
       .catch(() => {
         Swal.fire({
-          title: "SignIn Unsuccessful !!!",
-          icon: "success",
-          draggable: true,
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
         });
       });
   };

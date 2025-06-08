@@ -13,6 +13,8 @@ import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AuthProvider from "./Contexts/AuthProvider.jsx";
 import Myposts from "./Components/Myposts.jsx";
 import AllPosts from "./Components/AllPosts.jsx";
+import NotFound from "./Components/NotFound.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +51,7 @@ const router = createBrowserRouter([
             <Myposts></Myposts>
           </PrivateRoute>
         ),
+        errorElement: <NotFound></NotFound>,
       },
       {
         path: "/updatePost/:id",
@@ -69,6 +72,7 @@ const router = createBrowserRouter([
           return data;
         },
         element: <AllPosts></AllPosts>,
+        errorElement: <NotFound></NotFound>,
       },
       {
         path: "/postDetails/:id",
@@ -81,8 +85,13 @@ const router = createBrowserRouter([
             <PostDetails></PostDetails>
           </PrivateRoute>
         ),
+        errorElement: <NotFound></NotFound>,
       },
     ],
+  },
+  {
+    path: "*",
+    Component: NotFound,
   },
 ]);
 

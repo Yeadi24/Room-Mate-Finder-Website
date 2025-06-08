@@ -1,21 +1,29 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-import useTheme from "../Hooks/useTheme";
+
 import "./Navbar.css";
 import { AuthContext } from "../Contexts/AuthContext";
-import { toast } from "react-toastify";
-import DarkModeToggler from "./DarkModeToggler";
+
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
-  const { theme, toggleTheme } = useTheme();
+
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
-        toast("You have successfully logged out  !!!");
+        Swal.fire({
+          title: "Successfully Logged Out!!!",
+          icon: "success",
+          draggable: true,
+        });
       })
       .catch(() => {
-        console.log("This is an error");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
   };
 
@@ -83,9 +91,6 @@ const Navbar = () => {
               alt="logo"
             />
             <a className="btn btn-ghost text-2xl">RoomMate Finder</a>
-          </div>
-          <div>
-            <DarkModeToggler></DarkModeToggler>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

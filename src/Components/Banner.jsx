@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Banner = () => {
   return (
-    <div className="mt-10 w-[1200px] rounded-3xl bg-gradient-to-br from-pink-100 via-pink-200 to-pink-50 py-12 px-4 md:px-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+    <div className="mt-10 mx-auto w-[1200px] rounded-3xl bg-gradient-to-br from-pink-100 via-pink-200 to-pink-50 py-12 px-4 md:px-20 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
       <div className=" space-y-6 text-center md:text-left animate-fade-in">
         <h1 className="text-3xl font-extrabold text-pink-700 leading-snug">
           Find Your{" "}

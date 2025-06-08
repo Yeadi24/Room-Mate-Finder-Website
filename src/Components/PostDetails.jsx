@@ -33,7 +33,7 @@ const PostDetails = () => {
           }
         })
         .catch((error) => console.error("Error updating like count:", error));
-    } 
+    }
   };
 
   return (
@@ -83,12 +83,7 @@ const PostDetails = () => {
             <span className="font-semibold text-gray-600">Description:</span>{" "}
             {post.description}
           </p>
-          {likeCount > 0 && (
-            <p className="text-lg text-gray-700">
-              <span className="font-semibold text-red-500">Contact Info:</span>{" "}
-              {post.contact}
-            </p>
-          )}
+
           <button
             onClick={handleLike}
             disabled={user && user.email === post.email}
@@ -100,6 +95,12 @@ const PostDetails = () => {
           >
             Like
           </button>
+          {likeCount > 0 && (
+            <p className="text-lg text-gray-700">
+              <span className="font-semibold text-red-500">Contact Info:</span>{" "}
+              {post.contact}
+            </p>
+          )}
         </div>
       </div>
     </div>
