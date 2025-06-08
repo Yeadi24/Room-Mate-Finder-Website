@@ -8,11 +8,13 @@ const PostDetails = () => {
   const post = useLoaderData();
   const { user } = useContext(AuthContext);
   const [likeCount, setLikeCount] = useState(post.like || 0);
+  const [hasLiked, setHasLiked] = useState(false);
 
   const handleLike = () => {
     if (user && user.email !== post.email) {
       const newLikeCount = likeCount + 1;
       setLikeCount(newLikeCount);
+      setHasLiked(true);
 
       fetch(`https://coffe-server-bay.vercel.app/posts/${post._id}`, {
         method: "PUT",
@@ -99,7 +101,8 @@ const PostDetails = () => {
             >
               Like
             </button>
-            {likeCount > 0 && (
+
+            {(user?.email === post.email || hasLiked) && (
               <p className="text-lg text-gray-700">
                 <span className="font-semibold text-red-500">
                   Contact Info:
