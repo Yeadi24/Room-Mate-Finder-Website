@@ -5,6 +5,7 @@ import { Flip } from "react-awesome-reveal";
 
 const AllPosts = () => {
   const posts = useLoaderData();
+  document.title = "All Posts";
 
   return (
     <Flip direction="horizontal" triggerOnce>
