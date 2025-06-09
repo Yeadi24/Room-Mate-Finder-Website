@@ -93,7 +93,7 @@ const PostDetails = () => {
             <button
               onClick={handleLike}
               disabled={user && user.email === post.email}
-              className={`mt-4 inline-block px-6 py-2 text-lg font-semibold rounded-lg shadow-md text-white transition-all ${
+              className={`mt-4 cursor-pointer inline-block px-6 py-2 text-lg font-semibold rounded-lg shadow-md text-white transition-all ${
                 user && user.email === post.email
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-blue-500 hover:bg-blue-600"

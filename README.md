@@ -35,4 +35,4 @@ This project utilizes a modern front-end stack with the following tools and libr
 
 ---
 
-## 📁 Folder Structure Overview
+

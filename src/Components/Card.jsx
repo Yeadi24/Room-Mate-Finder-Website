@@ -31,12 +31,12 @@ const Card = ({ post }) => {
           <div className="pt-4 flex space-x-4">
             <Link
               to={`/postDetails/${post._id}`}
-              className="inline-block px-6 sm:px-8 md:px-10 py-2 text-lg bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg shadow-md hover:from-pink-600 hover:to-red-600 transition-all whitespace-nowrap"
+              className="inline-block px-6 cursor-pointer sm:px-8 md:px-10 py-2 text-lg bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg shadow-md hover:from-pink-600 hover:to-red-600 transition-all whitespace-nowrap"
             >
               See More
             </Link>
             <button
-              className={`inline-block px-6 sm:px-8 md:px-10 py-2 text-lg font-semibold rounded-lg shadow-md text-white transition-all whitespace-nowrap ${
+              className={`inline-block cursor-pointer px-6 sm:px-8 md:px-10 py-2 text-lg font-semibold rounded-lg shadow-md text-white transition-all whitespace-nowrap ${
                 post.availability === "available"
                   ? "bg-green-500 hover:bg-green-600"
                   : "bg-red-500 hover:bg-red-600"
@@ -47,7 +47,6 @@ const Card = ({ post }) => {
           </div>
         </div>
 
-        {/* Avatar and Name */}
         <div className="flex flex-col items-center ml-6">
           <div className="avatar avatar-online">
             <div className="w-20 rounded-full">
