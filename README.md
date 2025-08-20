@@ -8,6 +8,22 @@ Welcome to the **Room Mate Finder Website** — a modern, user-friendly platform
 
 ---
 
+
+
+
+## 📷 Screenshots
+
+<p align="center">
+  <img src="https://i.postimg.cc/wxG72Z0c/Screenshot-2025-08-21-021711.png" alt="Screenshot 1" width="500"/>
+</p>
+
+---
+
+<p align="center">
+  <img src="https://i.postimg.cc/XYcjRzcP/Screenshot-2025-08-21-021648.png" alt="Screenshot 2" width="500"/>
+</p>
+
+
 ## 🚀 Technologies Used
 
 This project utilizes a modern front-end stack with the following tools and libraries:
